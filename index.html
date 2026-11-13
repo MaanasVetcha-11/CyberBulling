@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SafeSocial – Stop Cyberbullying</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="navbar">
+  <div class="nav-brand">
+    <i class="fa-solid fa-shield-heart"></i>
+    <span>SafeSocial</span>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home"      class="nav-item" data-section="home">Home</a></li>
+    <li><a href="#detect"    class="nav-item" data-section="detect">Detect</a></li>
+    <li><a href="#prepost"   class="nav-item" data-section="prepost">Pre-Post</a></li>
+    <li><a href="#report"    class="nav-item" data-section="report">Report</a></li>
+    <li><a href="#evidence"  class="nav-item" data-section="evidence">Evidence</a></li>
+    <li><a href="#emergency" class="nav-item" data-section="emergency">Support</a></li>
+    <li><a href="#education" class="nav-item" data-section="education">Learn</a></li>
+    <li><a href="#dashboard" class="nav-item" data-section="dashboard">Dashboard</a></li>
+  </ul>
+</nav>
+
+<!-- ===== HOME ===== -->
+<section id="home" class="section active">
+  <div class="hero">
+    <div class="hero-badge"><i class="fa-solid fa-shield-heart"></i> Trusted Cyberbullying Protection</div>
+    <h1 class="hero-title">Safe<span class="accent">Social</span></h1>
+    <p class="hero-tagline">Stop Cyberbullying. Start Spreading Kindness.</p>
+    <p class="hero-desc">
+      SafeSocial empowers you to identify, prevent, and report cyberbullying on social media.
+      Our tools help create a safer, kinder digital community for everyone.
+    </p>
+    <div class="hero-cta">
+      <button class="btn btn-primary" onclick="goTo('detect')">
+        <i class="fa-solid fa-magnifying-glass"></i> Analyze a Message
+      </button>
+      <button class="btn btn-outline" onclick="goTo('education')">
+        <i class="fa-solid fa-book-open"></i> Learn More
+      </button>
+    </div>
+  </div>
+
+  <!-- Feature Cards -->
+  <div class="container">
+    <h2 class="section-title">Our Features</h2>
+    <div class="card-grid">
+      <div class="card feature-card" onclick="goTo('detect')">
+        <div class="card-icon bg-blue"><i class="fa-solid fa-robot"></i></div>
+        <h3>AI Detection</h3>
+        <p>Analyze messages for abusive or threatening language instantly.</p>
+        <span class="card-link">Try it <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+      <div class="card feature-card" onclick="goTo('prepost')">
+        <div class="card-icon bg-purple"><i class="fa-solid fa-triangle-exclamation"></i></div>
+        <h3>Pre-Post Warning</h3>
+        <p>Get warned before posting harmful content to others.</p>
+        <span class="card-link">Try it <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+      <div class="card feature-card" onclick="goTo('report')">
+        <div class="card-icon bg-red"><i class="fa-solid fa-flag"></i></div>
+        <h3>Report & Block</h3>
+        <p>Report abusive users and block them from reaching you.</p>
+        <span class="card-link">Go there <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+      <div class="card feature-card" onclick="goTo('evidence')">
+        <div class="card-icon bg-green"><i class="fa-solid fa-camera"></i></div>
+        <h3>Evidence Storage</h3>
+        <p>Store screenshots and evidence of cyberbullying safely.</p>
+        <span class="card-link">Go there <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+      <div class="card feature-card" onclick="goTo('emergency')">
+        <div class="card-icon bg-orange"><i class="fa-solid fa-heart-pulse"></i></div>
+        <h3>Emergency Support</h3>
+        <p>Find help, contact trusted people, and access resources.</p>
+        <span class="card-link">Get help <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+      <div class="card feature-card" onclick="goTo('dashboard')">
+        <div class="card-icon bg-indigo"><i class="fa-solid fa-chart-line"></i></div>
+        <h3>Dashboard</h3>
+        <p>Track your analysis history and protection activity.</p>
+        <span class="card-link">View stats <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </div>
+
+    <!-- SDG Ribbon -->
+    <div class="sdg-ribbon">
+      <span class="sdg-title">Supporting UN Sustainable Development Goals</span>
+      <div class="sdg-badges">
+        <div class="sdg-badge sdg3">
+          <span class="sdg-num">SDG 3</span>
+          <span class="sdg-label">Good Health &amp; Well-being</span>
+        </div>
+        <div class="sdg-badge sdg4">
+          <span class="sdg-num">SDG 4</span>
+          <span class="sdg-label">Quality Education</span>
+        </div>
+        <div class="sdg-badge sdg16">
+          <span class="sdg-num">SDG 16</span>
+          <span class="sdg-label">Peace, Justice &amp; Strong Institutions</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DETECT ===== -->
+<section id="detect" class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-icon bg-blue"><i class="fa-solid fa-robot"></i></div>
+      <div>
+        <h2>AI-Based Cyberbullying Detection</h2>
+        <p class="subtitle">Paste or type a message below to check if it contains harmful language.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <label class="form-label" for="detectInput">
+        <i class="fa-solid fa-comment-dots"></i> Enter a message or comment
+      </label>
+      <textarea id="detectInput" class="textarea" rows="5"
+        placeholder="Type or paste a message here… e.g. 'You are so ugly, nobody likes you!'"></textarea>
+
+      <div class="sample-btns">
+        <span class="sample-label">Load sample:</span>
+        <button class="btn btn-sm btn-ghost" onclick="loadSample('safe')">Safe Message</button>
+        <button class="btn btn-sm btn-ghost" onclick="loadSample('mild')">Mild Harmful</button>
+        <button class="btn btn-sm btn-ghost" onclick="loadSample('severe')">Severe Harmful</button>
+      </div>
+
+      <button class="btn btn-primary btn-full" onclick="analyzeMessage()">
+        <i class="fa-solid fa-magnifying-glass"></i> Analyze Message
+      </button>
+
+      <!-- Result -->
+      <div id="detectResult" class="detect-result hidden"></div>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="card" id="analysisDetailsCard" style="display:none;">
+      <h3><i class="fa-solid fa-chart-bar"></i> Analysis Details</h3>
+      <div id="analysisDetails"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRE-POST WARNING ===== -->
+<section id="prepost" class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-icon bg-purple"><i class="fa-solid fa-triangle-exclamation"></i></div>
+      <div>
+        <h2>Pre-Posting Warning System</h2>
+        <p class="subtitle">Your message is scanned before it goes live. Promote kindness online!</p>
+      </div>
+    </div>
+
+    <div class="card social-post-card">
+      <div class="post-header">
+        <div class="post-avatar"><i class="fa-solid fa-user"></i></div>
+        <div>
+          <strong>You</strong>
+          <span class="post-platform">Social Media Post</span>
+        </div>
+      </div>
+      <textarea id="postInput" class="textarea" rows="4"
+        placeholder="What's on your mind? Write your message here…"></textarea>
+      <div class="char-counter"><span id="charCount">0</span> characters</div>
+      <button class="btn btn-primary btn-full" onclick="prePostCheck()">
+        <i class="fa-solid fa-paper-plane"></i> Post
+      </button>
+    </div>
+
+    <!-- Warning Modal -->
+    <div id="postWarningModal" class="modal-overlay hidden">
+      <div class="modal">
+        <div class="modal-icon warning"><i class="fa-solid fa-triangle-exclamation"></i></div>
+        <h3>Wait Before You Post!</h3>
+        <p id="postWarningText">This message may hurt someone. Do you want to reconsider?</p>
+        <div id="harmWords" class="harm-words-list"></div>
+        <div class="modal-actions">
+          <button class="btn btn-outline" onclick="reconsiderPost()">
+            <i class="fa-solid fa-pen"></i> Reconsider Message
+          </button>
+          <button class="btn btn-danger" onclick="postAnyway()">
+            <i class="fa-solid fa-paper-plane"></i> Post Anyway
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="postSuccessModal" class="modal-overlay hidden">
+      <div class="modal">
+        <div class="modal-icon success"><i class="fa-solid fa-circle-check"></i></div>
+        <h3>Post Published!</h3>
+        <p>Your message has been posted. Thank you for being mindful of others! 🌟</p>
+        <button class="btn btn-primary" onclick="closeModal('postSuccessModal')">Done</button>
+      </div>
+    </div>
+
+    <!-- Posted Feed -->
+    <div class="card" id="postFeedCard" style="display:none;">
+      <h3><i class="fa-solid fa-newspaper"></i> Posted Messages</h3>
+      <div id="postFeed"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REPORT & BLOCK ===== -->
+<section id="report" class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-icon bg-red"><i class="fa-solid fa-flag"></i></div>
+      <div>
+        <h2>Report &amp; Block System</h2>
+        <p class="subtitle">Report abusive users and block them from interacting with you.</p>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <!-- Report Form -->
+      <div class="card">
+        <h3><i class="fa-solid fa-flag" style="color:var(--red)"></i> Report a User</h3>
+        <label class="form-label" for="reportUsername">Username</label>
+        <input type="text" id="reportUsername" class="input" placeholder="e.g. @bully123" />
+
+        <label class="form-label" for="reportReason">Reason for Reporting</label>
+        <select id="reportReason" class="input select">
+          <option value="">— Select a reason —</option>
+          <option>Harassment or bullying</option>
+          <option>Hate speech</option>
+          <option>Threats or violence</option>
+          <option>Sharing private information</option>
+          <option>Spam or fake account</option>
+          <option>Other</option>
+        </select>
+
+        <label class="form-label" for="reportDetails">Additional Details (optional)</label>
+        <textarea id="reportDetails" class="textarea" rows="3"
+          placeholder="Describe the incident briefly…"></textarea>
+
+        <button class="btn btn-danger btn-full" onclick="reportUser()">
+          <i class="fa-solid fa-flag"></i> Report User
+        </button>
+      </div>
+
+      <!-- Block Form -->
+      <div class="card">
+        <h3><i class="fa-solid fa-ban" style="color:var(--indigo)"></i> Block a User</h3>
+        <label class="form-label" for="blockUsername">Username</label>
+        <input type="text" id="blockUsername" class="input" placeholder="e.g. @troll456" />
+
+        <label class="form-label" for="blockReason">Reason (optional)</label>
+        <input type="text" id="blockReason" class="input" placeholder="Why are you blocking this user?" />
+
+        <button class="btn btn-secondary btn-full" style="margin-top:1rem;" onclick="blockUser()">
+          <i class="fa-solid fa-ban"></i> Block User
+        </button>
+
+        <div class="info-box" style="margin-top:1rem;">
+          <i class="fa-solid fa-circle-info"></i>
+          Blocking prevents the user from seeing your profile and contacting you.
+        </div>
+      </div>
+    </div>
+
+    <!-- Lists -->
+    <div class="two-col">
+      <div class="card">
+        <h3><i class="fa-solid fa-list-check" style="color:var(--red)"></i> Reported Users
+          <span class="badge badge-red" id="reportCount">0</span>
+        </h3>
+        <div id="reportedList" class="user-list">
+          <p class="empty-state"><i class="fa-solid fa-inbox"></i> No reports yet.</p>
+        </div>
+      </div>
+      <div class="card">
+        <h3><i class="fa-solid fa-ban" style="color:var(--indigo)"></i> Blocked Users
+          <span class="badge badge-indigo" id="blockCount">0</span>
+        </h3>
+        <div id="blockedList" class="user-list">
+          <p class="empty-state"><i class="fa-solid fa-inbox"></i> No blocked users.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EVIDENCE ===== -->
+<section id="evidence" class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-icon bg-green"><i class="fa-solid fa-camera"></i></div>
+      <div>
+        <h2>Evidence Storage</h2>
+        <p class="subtitle">Upload and store screenshots or files related to cyberbullying incidents.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="upload-zone" id="uploadZone" onclick="document.getElementById('evidenceFile').click()">
+        <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+        <p>Click to upload evidence files</p>
+        <p class="upload-sub">Supports images, PDFs, and text files (max 10 MB each)</p>
+        <input type="file" id="evidenceFile" multiple accept="image/*,.pdf,.txt,.doc,.docx"
+               style="display:none" onchange="handleFileUpload(event)" />
+      </div>
+
+      <label class="form-label" for="evidenceNote">Add a note for this evidence</label>
+      <input type="text" id="evidenceNote" class="input"
+             placeholder="e.g. Screenshot of harassment on Instagram, Oct 2024" />
+
+      <button class="btn btn-primary btn-full" onclick="saveEvidence()">
+        <i class="fa-solid fa-floppy-disk"></i> Save Evidence
+      </button>
+
+      <div id="uploadPreview" class="upload-preview hidden"></div>
+    </div>
+
+    <div class="card">
+      <h3><i class="fa-solid fa-folder-open"></i> Stored Evidence
+        <span class="badge badge-green" id="evidenceCount">0</span>
+      </h3>
+      <div id="evidenceList">
+        <p class="empty-state"><i class="fa-solid fa-inbox"></i> No evidence stored yet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EMERGENCY SUPPORT ===== -->
+<section id="emergency" class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-icon bg-orange"><i class="fa-solid fa-heart-pulse"></i></div>
+      <div>
+        <h2>Emergency &amp; Support</h2>
+        <p class="subtitle">You are not alone. Help is always available.</p>
+      </div>
+    </div>
+
+    <div class="support-banner">
+      <i class="fa-solid fa-hand-holding-heart"></i>
+      <div>
+        <h3>You Matter. You Are Not Alone.</h3>
+        <p>
+          Cyberbullying is never your fault. Many people care about you and want to help.
+          Reach out — speaking up is the bravest thing you can do.
+        </p>
+      </div>
+    </div>
+
+    <div class="card-grid">
+      <div class="card support-card">
+        <div class="card-icon bg-blue"><i class="fa-solid fa-user-group"></i></div>
+        <h3>Talk to Someone You Trust</h3>
+        <p>Share what you're going through with a parent, guardian, teacher, or close friend.</p>
+        <div class="support-tips">
+          <span><i class="fa-solid fa-check"></i> Tell them exactly what happened</span>
+          <span><i class="fa-solid fa-check"></i> Show them screenshots if you have them</span>
+          <span><i class="fa-solid fa-check"></i> Ask them to help you report it</span>
+        </div>
+      </div>
+
+      <div class="card support-card">
+        <div class="card-icon bg-green"><i class="fa-solid fa-stethoscope"></i></div>
+        <h3>Seek Professional Help</h3>
+        <p>A school counselor or mental health professional can provide confidential support.</p>
+        <div class="support-tips">
+          <span><i class="fa-solid fa-check"></i> School counselor or guidance teacher</span>
+          <span><i class="fa-solid fa-check"></i> Online counseling services</span>
+          <span><i class="fa-solid fa-check"></i> Child helpline services</span>
+        </div>
+      </div>
+
+      <div class="card support-card">
+        <div class="card-icon bg-red"><i class="fa-solid fa-phone-volume"></i></div>
+        <h3>Emergency &amp; Helplines</h3>
+        <p>Contact official support services when you feel unsafe or threatened.</p>
+        <div class="helplines">
+          <div class="helpline-item">
+            <span class="helpline-label">iCall (India)</span>
+            <span class="helpline-num">9152987821</span>
+          </div>
+          <div class="helpline-item">
+            <span class="helpline-label">Vandrevala Foundation</span>
+            <span class="helpline-num">1860-2662-345</span>
+          </div>
+          <div class="helpline-item">
+            <span class="helpline-label">Cyber Crime (India)</span>
+            <span class="helpline-num">1930</span>
+          </div>
+          <div class="helpline-item">
+            <span class="helpline-label">Emergency</span>
+            <span class="helpline-num">112</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert-box warning-box">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <div>
+        <strong>Important Reminder:</strong> Always save evidence (screenshots, links) of cyberbullying before reporting.
+        For serious threats, report directly to your local authorities and the platform's safety team.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><i class="fa-solid fa-heart" style="color:var(--red)"></i> Quick Self-Care Tips</h3>
+      <div class="tips-grid">
+        <div class="tip-item"><i class="fa-solid fa-moon"></i> Take breaks from social media</div>
+        <div class="tip-item"><i class="fa-solid fa-person-walking"></i> Go for a walk or exercise</div>
+        <div class="tip-item"><i class="fa-solid fa-comments"></i> Talk to a friend you trust</div>
+        <div class="tip-item"><i class="fa-solid fa-book"></i> Journal your feelings</div>
+        <div class="tip-item"><i class="fa-solid fa-music"></i> Listen to calming music</div>
+        <div class="tip-item"><i class="fa-solid fa-mug-hot"></i> Practice breathing exercises</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EDUCATION ===== -->
+<section id="education" class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-icon bg-indigo"><i class="fa-solid fa-graduation-cap"></i></div>
+      <div>
+        <h2>Educational Hub</h2>
+        <p class="subtitle">Learn about cyberbullying and how to protect yourself and others.</p>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="edu-tabs">
+      <button class="edu-tab active" onclick="switchEduTab(this, 'tab-what')">What is it?</button>
+      <button class="edu-tab" onclick="switchEduTab(this, 'tab-types')">Types</button>
+      <button class="edu-tab" onclick="switchEduTab(this, 'tab-effects')">Effects</button>
+      <button class="edu-tab" onclick="switchEduTab(this, 'tab-safe')">Stay Safe</button>
+      <button class="edu-tab" onclick="switchEduTab(this, 'tab-help')">Help Others</button>
+    </div>
+
+    <div id="tab-what" class="edu-panel active card">
+      <h3><i class="fa-solid fa-circle-question"></i> What is Cyberbullying?</h3>
+      <p>
+        Cyberbullying is the use of digital technology — including social media, messaging apps, online games,
+        and email — to repeatedly harass, threaten, embarrass, or target another person.
+      </p>
+      <p>
+        Unlike traditional bullying, cyberbullying can follow victims everywhere through their devices and can
+        be anonymous, making it especially damaging.
+      </p>
+      <div class="fact-box">
+        <i class="fa-solid fa-lightbulb"></i>
+        <div>
+          <strong>Key Facts:</strong>
+          <ul>
+            <li>Over 36% of young people have experienced cyberbullying online.</li>
+            <li>Victims are 2–9 times more likely to consider self-harm.</li>
+            <li>Only 1 in 10 victims tell a parent or trusted adult.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-types" class="edu-panel card" style="display:none;">
+      <h3><i class="fa-solid fa-list"></i> Types of Cyberbullying</h3>
+      <div class="types-grid">
+        <div class="type-item">
+          <i class="fa-solid fa-comment-slash"></i>
+          <div><strong>Harassment</strong><br>Sending offensive, rude, and insulting messages repeatedly.</div>
+        </div>
+        <div class="type-item">
+          <i class="fa-solid fa-mask"></i>
+          <div><strong>Impersonation</strong><br>Pretending to be someone else online to damage their reputation.</div>
+        </div>
+        <div class="type-item">
+          <i class="fa-solid fa-eye-slash"></i>
+          <div><strong>Exclusion</strong><br>Intentionally leaving someone out of online groups or activities.</div>
+        </div>
+        <div class="type-item">
+          <i class="fa-solid fa-unlock"></i>
+          <div><strong>Doxing</strong><br>Publicly sharing private or personal information without consent.</div>
+        </div>
+        <div class="type-item">
+          <i class="fa-solid fa-retweet"></i>
+          <div><strong>Trolling</strong><br>Making inflammatory comments to provoke emotional responses.</div>
+        </div>
+        <div class="type-item">
+          <i class="fa-solid fa-camera"></i>
+          <div><strong>Sexting/Image Abuse</strong><br>Sharing intimate images without consent.</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-effects" class="edu-panel card" style="display:none;">
+      <h3><i class="fa-solid fa-heart-crack"></i> Effects of Cyberbullying</h3>
+      <div class="effects-list">
+        <div class="effect-item emotional">
+          <h4><i class="fa-solid fa-face-sad-tear"></i> Emotional Effects</h4>
+          <ul>
+            <li>Increased anxiety and depression</li>
+            <li>Feelings of isolation and loneliness</li>
+            <li>Low self-esteem and self-worth</li>
+            <li>Fear of using technology or going online</li>
+          </ul>
+        </div>
+        <div class="effect-item academic">
+          <h4><i class="fa-solid fa-school"></i> Academic Effects</h4>
+          <ul>
+            <li>Declining school performance</li>
+            <li>Reluctance to attend school</li>
+            <li>Difficulty concentrating in class</li>
+            <li>Dropping extracurricular activities</li>
+          </ul>
+        </div>
+        <div class="effect-item social">
+          <h4><i class="fa-solid fa-people-arrows"></i> Social Effects</h4>
+          <ul>
+            <li>Withdrawal from friends and family</li>
+            <li>Loss of trust in relationships</li>
+            <li>Avoidance of social situations</li>
+            <li>Difficulty forming new friendships</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-safe" class="edu-panel card" style="display:none;">
+      <h3><i class="fa-solid fa-lock"></i> How to Stay Safe on Social Media</h3>
+      <div class="safety-steps">
+        <div class="safety-step">
+          <span class="step-num">01</span>
+          <div>
+            <strong>Protect your privacy</strong>
+            <p>Set your profiles to private and think before you share personal information.</p>
+          </div>
+        </div>
+        <div class="safety-step">
+          <span class="step-num">02</span>
+          <div>
+            <strong>Be selective with connections</strong>
+            <p>Only accept friend or follow requests from people you know in real life.</p>
+          </div>
+        </div>
+        <div class="safety-step">
+          <span class="step-num">03</span>
+          <div>
+            <strong>Use strong passwords</strong>
+            <p>Create unique passwords and enable two-factor authentication on all accounts.</p>
+          </div>
+        </div>
+        <div class="safety-step">
+          <span class="step-num">04</span>
+          <div>
+            <strong>Block and report bullies</strong>
+            <p>Use platform tools to block harassers and report abusive behavior immediately.</p>
+          </div>
+        </div>
+        <div class="safety-step">
+          <span class="step-num">05</span>
+          <div>
+            <strong>Think before you post</strong>
+            <p>Ask yourself: "Would I say this to someone's face?" if not, don't post it.</p>
+          </div>
+        </div>
+        <div class="safety-step">
+          <span class="step-num">06</span>
+          <div>
+            <strong>Save evidence</strong>
+            <p>Screenshot and save any harmful messages before blocking or deleting.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-help" class="edu-panel card" style="display:none;">
+      <h3><i class="fa-solid fa-hands-holding-child"></i> How to Help Someone Experiencing Cyberbullying</h3>
+      <div class="help-cards">
+        <div class="help-card">
+          <i class="fa-solid fa-ear-listen" style="color:var(--blue)"></i>
+          <h4>Listen Without Judgment</h4>
+          <p>Let them share their experience. Don't minimize or blame. Just be there.</p>
+        </div>
+        <div class="help-card">
+          <i class="fa-solid fa-thumbs-up" style="color:var(--green)"></i>
+          <h4>Believe and Validate Them</h4>
+          <p>Tell them you believe them and that what's happening is not okay.</p>
+        </div>
+        <div class="help-card">
+          <i class="fa-solid fa-shield" style="color:var(--indigo)"></i>
+          <h4>Help Them Report</h4>
+          <p>Help document evidence and report to the platform, school, or authorities.</p>
+        </div>
+        <div class="help-card">
+          <i class="fa-solid fa-heart" style="color:var(--red)"></i>
+          <h4>Provide Emotional Support</h4>
+          <p>Check in regularly, include them socially, and remind them they're valued.</p>
+        </div>
+      </div>
+
+      <div class="alert-box info-box">
+        <i class="fa-solid fa-circle-info"></i>
+        <div>
+          <strong>Remember:</strong> Never share or forward bullying content — this spreads harm further.
+          Be an upstander, not a bystander!
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DASHBOARD ===== -->
+<section id="dashboard" class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-icon bg-indigo"><i class="fa-solid fa-chart-line"></i></div>
+      <div>
+        <h2>Activity Dashboard</h2>
+        <p class="subtitle">Your SafeSocial usage and protection activity at a glance.</p>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon bg-blue"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <div class="stat-value" id="stat-analyzed">0</div>
+        <div class="stat-label">Messages Analyzed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon bg-green"><i class="fa-solid fa-circle-check"></i></div>
+        <div class="stat-value" id="stat-safe">0</div>
+        <div class="stat-label">Safe Messages</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon bg-orange"><i class="fa-solid fa-triangle-exclamation"></i></div>
+        <div class="stat-value" id="stat-harmful">0</div>
+        <div class="stat-label">Harmful Detected</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon bg-red"><i class="fa-solid fa-flag"></i></div>
+        <div class="stat-value" id="stat-reports">0</div>
+        <div class="stat-label">Reports Submitted</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon bg-indigo"><i class="fa-solid fa-ban"></i></div>
+        <div class="stat-value" id="stat-blocked">0</div>
+        <div class="stat-label">Users Blocked</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon bg-purple"><i class="fa-solid fa-camera"></i></div>
+        <div class="stat-value" id="stat-evidence">0</div>
+        <div class="stat-label">Evidence Files</div>
+      </div>
+    </div>
+
+    <!-- Safety Score -->
+    <div class="card">
+      <h3><i class="fa-solid fa-shield-halved"></i> Your Safety Score</h3>
+      <div class="safety-score-wrap">
+        <div class="score-ring" id="scoreRing">
+          <svg viewBox="0 0 120 120" class="ring-svg">
+            <circle cx="60" cy="60" r="50" class="ring-bg" />
+            <circle cx="60" cy="60" r="50" class="ring-fill" id="ringFill" />
+          </svg>
+          <div class="score-label">
+            <span id="scoreVal">—</span>
+            <small>/ 100</small>
+          </div>
+        </div>
+        <div class="score-info">
+          <p id="scoreMessage">Analyze messages and use the app to build your safety score.</p>
+          <div id="scoreTips"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="card">
+      <h3><i class="fa-solid fa-clock-rotate-left"></i> Recent Activity</h3>
+      <div id="activityLog">
+        <p class="empty-state"><i class="fa-solid fa-inbox"></i> No activity yet. Start using SafeSocial!</p>
+      </div>
+      <button class="btn btn-ghost btn-sm" onclick="clearActivity()" id="clearActivityBtn" style="display:none;">
+        <i class="fa-solid fa-trash"></i> Clear Activity Log
+      </button>
+    </div>
+
+    <div class="card">
+      <h3><i class="fa-solid fa-rotate-right"></i> Reset All Data</h3>
+      <p style="color:var(--text-secondary);">
+        This will erase all stored reports, evidence, and statistics from this device.
+      </p>
+      <button class="btn btn-danger" onclick="resetAllData()">
+        <i class="fa-solid fa-trash-can"></i> Reset All Data
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TOAST ===== -->
+<div id="toast" class="toast hidden"></div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <i class="fa-solid fa-shield-heart"></i>
+      <span>SafeSocial</span>
+    </div>
+    <p class="footer-tagline">Stop Cyberbullying. Start Spreading Kindness.</p>
+    <div class="footer-sdgs">
+      <span class="footer-sdg sdg3-f">SDG 3 – Good Health &amp; Well-being</span>
+      <span class="footer-sdg sdg4-f">SDG 4 – Quality Education</span>
+      <span class="footer-sdg sdg16-f">SDG 16 – Peace &amp; Justice</span>
+    </div>
+    <p class="footer-copy">
+      &copy; 2024 SafeSocial — A Community Safety Initiative<br/>
+      <small>Built to promote digital kindness and protect online communities.</small>
+    </p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
+
